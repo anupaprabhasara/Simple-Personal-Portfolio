@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Anupa, Anupa Prabhasara, software engineer sri lanka, web developer sri lanka, software engineering student, freelance web developer, web development services, innovative software solutions, web design, front-end development, back-end development, responsive web design, custom websites, HTML, CSS, JavaScript, PHP, WordPress, SEO services, web developer for hire">
+    <meta name="description" content="Get in touch with Anupa Prabhasara, an experienced freelance web developer and undergraduate software engineering student. Reach out for professional web development services, collaboration opportunities, and more.">
+    <meta name="author" content="Anupa Prabhasara">
+    <title>Contact</title>
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/46b998f154.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="contact">
+        <div class="container">
+            <nav>
+                <a href="/"><img src="/images/logo.png" class="logo"></a>
+                <ul id="sidemenu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/services/">Services</a></li>
+                    <li><a href="/portfolio/">Portfolio</a></li>
+                    <li><a href="">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p class="p-1"><a href="mailto:info@anupa.lk"><i class="fa-solid fa-envelope"></i> info@anupa.lk</a></p>
+                    <p><a href="tel:+94712003344"><i class="fa-solid fa-square-phone"></i> +94 (71) 200 3344</a></p>
+                    <div class="social-icons">
+                        <a href="https://web.facebook.com/anupaprabhasara"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/anupaprabhasara/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@anupaprabhasara"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://github.com/anupaprabhasara"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="/images/Resume.png" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="John Smith" required>
+                        <input type="email" name="Email" placeholder="john@email.com" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwh8aYThAEGaRF9ld5neOseJ10NzYcefyaGLo4kNPKAdMFmIThsL0hZc-9o8hULc8QN/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                    msg.innerHTML = "Message sent successfully!"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+    <script src="/script/menu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="/script/script.js"></script>
+</body>
+</html>

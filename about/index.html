@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Anupa, Anupa Prabhasara, software engineer sri lanka, web developer sri lanka, software engineering student, freelance web developer, web development services, innovative software solutions, web design, front-end development, back-end development, responsive web design, custom websites, HTML, CSS, JavaScript, PHP, WordPress, SEO services, web developer for hire">
+    <meta name="description" content="Anupa Prabhasara, an undergraduate software engineering student and freelance web developer, passionate about creating innovative web solutions. Discover my projects, skills, and professional journey.">
+    <meta name="author" content="Anupa Prabhasara">
+    <title>About</title>
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/46b998f154.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="about">
+        <div class="container">
+            <nav>
+                <a href="/"><img src="/images/logo.png" class="logo"></a>
+                <ul id="sidemenu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="/services/">Services</a></li>
+                    <li><a href="/portfolio/">Portfolio</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="/images/Hero.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p class="description">Welcome! I'm Anupa Prabhasara, a Software Engineering undergraduate passionate about building
+                        websites. This site is part of my studies, where I combine technical skills with creative design to create
+                        user-friendly experiences. I enjoy exploring how technology can solve problems and make things better.
+                        Join me as I share my projects, ideas, and journey in web development. Let's create
+                        something great together!</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Developing</span><br>Web App Development</li>
+                            <li><span>Software Developing</span><br>POS System Development</li>
+                            <li><span>App Developing</span><br>Mobile App Development</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2019 - Present</span><br>YouTube Content Creator</li>
+                            <li><span>2022 - Present</span><br>Web Application Developer</li>
+                            <li><span>2021 - 2023</span><br>Social Media Manager at DNC</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2014 - 2019</span><br>Secondary Education</li>
+                            <li><span>2020 - 2022</span><br>GCE AL (Physical Science)</li>
+                            <li><span>2023 - Present</span><br>BSc (Hons) in IT Spe in SE</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for(tablink of tablinks) {
+                tablink.classList.remove("active-link")
+            }
+            for(tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    
+    <script src="/script/menu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="/script/script.js"></script>
+</body>
+</html>
