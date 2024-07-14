@@ -1,0 +1,22 @@
+RewriteEngine On
+
+# index.html to /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/index\.html [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# index.html to /page/
+RewriteRule ^about/index\.html$ /about/ [R=301,L]
+RewriteRule ^services/index\.html$ /services/ [R=301,L]
+RewriteRule ^portfolio/index\.html$ /portfolio/ [R=301,L]
+RewriteRule ^contact/index\.html$ /contact/ [R=301,L]
+
+# 401, 403, 404, 500 to /
+ErrorDocument 401 /
+ErrorDocument 403 /
+ErrorDocument 404 /
+ErrorDocument 500 /
+
+# /xxx to / or /xxx/xxx to /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . / [L,R=301]
